@@ -12,7 +12,7 @@ pipeline {
                 sh "/opt/apache-maven-3.8.6/bin/mvn test"
             }
         }
-        stage('Release') {
+        stage('Releasee') {
             steps {
                 sh "docker build -t tomvd123/java-17-demo:${BUILD_NUMBER} ."
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
